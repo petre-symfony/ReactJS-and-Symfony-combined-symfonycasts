@@ -11,6 +11,7 @@ export default class RepLogApp extends Component {
 
 	render() {
 		const { highlightedRowId } = this.state;
+		const { withHeart } = this.props;
 		let heart = '';
 		const repLogs = [
 			{ id: 1, reps: 25, itemLabel: 'My Laptop', totalWeightLifted: 112.5 },
@@ -18,7 +19,7 @@ export default class RepLogApp extends Component {
 			{ id: 8, reps: 4, itemLabel: 'Big Fat Cat', totalWeightLifted: 72 }
 		];
 
-		if (this.props.withHeart){
+		if (withHeart){
 			heart = <span>❤️</span>;
 		}
 
