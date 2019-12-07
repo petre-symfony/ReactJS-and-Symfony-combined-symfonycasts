@@ -3,6 +3,22 @@ import React, {Component} from "react";
 export default class RepLogApp extends Component {
 	render() {
 		let heart = '';
+		const repLogs = [
+			{ id: 1, reps: 25, itemLabel: 'My Laptop', totalWeightLifted: 112.5 },
+			{ id: 2, reps: 10, itemLabel: 'Big Fat Cat', totalWeightLifted: 180 },
+			{ id: 8, reps: 4, itemLabel: 'Big Fat Cat', totalWeightLifted: 72 }
+		];
+		const repLogElement = repLogs.map(repLog => {
+			return (
+				<tr>
+					<td>{repLog.itemLabel}</td>
+					<td>{repLog.reps}</td>
+					<td>{repLog.totalWeightLifted}</td>
+					<td>...</td>
+				</tr>
+			);
+		});
+
 		if (this.props.withHeart){
 			heart = <span>❤️</span>;
 		}
@@ -21,12 +37,7 @@ export default class RepLogApp extends Component {
 					</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Big Fat Cat</td>
-							<td>10</td>
-							<td>180</td>
-							<td>...</td>
-						</tr>
+						{repLogElement}
 					</tbody>
 					<tfoot>
 					<tr>
