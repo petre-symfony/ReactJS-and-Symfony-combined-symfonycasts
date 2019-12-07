@@ -58,12 +58,14 @@ export default class RepLogApp extends Component {
 						</select>
 					</div>
 
+					{' '}
 
 					<div className="form-group">
 						<label className="sr-only required" htmlFor="reps">How many times?</label>
 						<input type="number" id="rep_log_reps" name="reps" required="required" placeholder="How many times?"/>
 					</div>
 
+					{' '}
 
 					<button type="submit" className="btn btn-primary">I Lifted it!</button>
 				</form>
