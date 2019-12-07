@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-const el = <h2>Lift Stuff! <span>❤️</span></h2>;
+class RepLogApp extends React.Component {
+	render() {
+		return <h2>Lift Stuff! <span>❤️</span></h2>;
+	}
+}
 
-console.log(el);
 
+console.log(<RepLogApp/>);
 
-ReactDom.render(el, document.getElementById('lift-stuff-app'));
+ReactDom.render(<RepLogApp/>, document.getElementById('lift-stuff-app')); 
