@@ -10,6 +10,7 @@ export default class RepLogApp extends Component {
 	}
 
 	render() {
+		const { highlightedRowId } = this.state;
 		let heart = '';
 		const repLogs = [
 			{ id: 1, reps: 25, itemLabel: 'My Laptop', totalWeightLifted: 112.5 },
@@ -36,7 +37,10 @@ export default class RepLogApp extends Component {
 					</thead>
 					<tbody>
 						{repLogs.map((repLog) => (
-							<tr key={repLog.id}>
+							<tr
+						      key={repLog.id}
+								  className={highlightedRowId === repLog.id ? 'info' : ''}
+							>
 								<td>{repLog.itemLabel}</td>
 								<td>{repLog.reps}</td>
 								<td>{repLog.totalWeightLifted}</td>
