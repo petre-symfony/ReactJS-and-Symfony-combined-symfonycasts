@@ -8,16 +8,6 @@ export default class RepLogApp extends Component {
 			{ id: 2, reps: 10, itemLabel: 'Big Fat Cat', totalWeightLifted: 180 },
 			{ id: 8, reps: 4, itemLabel: 'Big Fat Cat', totalWeightLifted: 72 }
 		];
-		const repLogElement = repLogs.map(repLog => {
-			return (
-				<tr key={repLog.id}>
-					<td>{repLog.itemLabel}</td>
-					<td>{repLog.reps}</td>
-					<td>{repLog.totalWeightLifted}</td>
-					<td>...</td>
-				</tr>
-			);
-		});
 
 		if (this.props.withHeart){
 			heart = <span>❤️</span>;
@@ -37,7 +27,16 @@ export default class RepLogApp extends Component {
 					</tr>
 					</thead>
 					<tbody>
-						{repLogElement}
+						{repLogs.map(repLog => {
+							return (
+								<tr key={repLog.id}>
+									<td>{repLog.itemLabel}</td>
+									<td>{repLog.reps}</td>
+									<td>{repLog.totalWeightLifted}</td>
+									<td>...</td>
+								</tr>
+							);
+						})}
 					</tbody>
 					<tfoot>
 					<tr>
