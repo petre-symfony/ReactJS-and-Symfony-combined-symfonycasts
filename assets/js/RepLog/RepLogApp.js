@@ -10,7 +10,7 @@ export default class RepLogApp extends Component {
 		];
 		const repLogElement = repLogs.map(repLog => {
 			return (
-				<tr>
+				<tr key={repLog.id}>
 					<td>{repLog.itemLabel}</td>
 					<td>{repLog.reps}</td>
 					<td>{repLog.totalWeightLifted}</td>
