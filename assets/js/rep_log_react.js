@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React, { Component } from 'react';
+import { render }  from 'react-dom';
 
-class RepLogApp extends React.Component {
+class RepLogApp extends Component {
 	render() {
 		return <h2>Lift Stuff! <span>❤️</span></h2>;
 	}
@@ -10,4 +10,4 @@ class RepLogApp extends React.Component {
 
 console.log(<RepLogApp/>);
 
-ReactDom.render(<RepLogApp/>, document.getElementById('lift-stuff-app')); 
+render(<RepLogApp/>, document.getElementById('lift-stuff-app'));
