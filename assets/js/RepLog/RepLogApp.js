@@ -1,6 +1,14 @@
 import React, {Component} from "react";
 
 export default class RepLogApp extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			highlightedRowId: null
+		}
+	}
+
 	render() {
 		let heart = '';
 		const repLogs = [
