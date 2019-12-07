@@ -41,7 +41,7 @@ export default class RepLogApp extends Component {
 							<tr
 						      key={repLog.id}
 								  className={highlightedRowId === repLog.id ? 'info' : ''}
-									onClick={() => console.log('OMG an onClick!') }
+									onClick={() => this.setState({highlightedRowId: repLog.id})  }
 							>
 								<td>{repLog.itemLabel}</td>
 								<td>{repLog.reps}</td>
