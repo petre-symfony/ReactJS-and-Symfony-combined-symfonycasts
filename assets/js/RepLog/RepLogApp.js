@@ -22,11 +22,9 @@ export default class RepLogApp extends Component {
 		this.setState({highlightedRowId: repLogId});
 	}
 
-	handleNewItemSubmit(event){
-		event.preventDefault();
-
-		console.log('Submit');
-		console.log(event.target.elements.namedItem('reps').value);
+	handleNewItemSubmit(itemName, reps){
+		console.log('TODO - handle this new data');
+		console.log(itemName, reps);
 	}
 
 	render() {

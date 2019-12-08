@@ -22,6 +22,15 @@ export default function RepLogs(props) {
 		heart = <span>❤️</span>;
 	}
 
+	function handleFormSubmit(event) {
+		event.preventDefault();
+
+		console.log('Submit');
+		console.log(event.target.elements.namedItem('reps').value);
+
+		onNewItemSubmit('Big Fat Cat', event.target.elements.namedItem('reps').value);
+	}
+
 	return (
 		<div className="col-md-7">
 			<h2>Lift History! {heart}</h2>
@@ -51,7 +60,7 @@ export default function RepLogs(props) {
 				</tfoot>
 			</table>
 
-			<form className="form-inline" onSubmit={ onNewItemSubmit }>
+			<form className="form-inline" onSubmit={ handleFormSubmit }>
 				<div className="form-group">
 					<label className="sr-only required" htmlFor="item">What did you lift?</label>
 					<select id="rep_log_item" /* defaultValue="cat"*/ name="item" required="required">
