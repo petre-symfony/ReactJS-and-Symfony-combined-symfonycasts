@@ -23,7 +23,7 @@ export default function RepLogs(props) {
 				</thead>
 				<RepLogList
 					highlightedRowId={ highlightedRowId }
-					onRowClick={ onRowClick }
+					onRowClick="dd"
 				/>
 				<tfoot>
 				<tr>
