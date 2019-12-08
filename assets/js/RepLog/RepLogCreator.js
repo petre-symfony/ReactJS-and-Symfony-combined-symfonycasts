@@ -53,7 +53,7 @@ export default class RepLogCreator extends Component {
 	render() {
 		const { quantityInputError } = this.state;
 		return (
-			<form className="form-inline" onSubmit={this.handleFormSubmit}>
+			<form onSubmit={this.handleFormSubmit}>
 				<div className="form-group">
 					<label className="sr-only required" htmlFor="item">What did you lift?</label>
 					<select id="rep_log_item" /* defaultValue="cat"*/ ref={this.itemSelect} required="required">
