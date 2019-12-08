@@ -8,6 +8,13 @@ export default class RepLogCreator extends Component {
 		this.quantityInput = React.createRef();
 		this.itemSelect = React.createRef();
 
+		this.itemOptions = [
+			{ id: 'cat', text: 'Cat' },
+			{ id: 'fat_cat', text: 'Big Fat Cat' },
+			{ id: 'laptop', text: 'My Laptop' },
+			{ id: 'coffee_cup', text: 'Coffee Cup' },
+		];
+
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}
 
@@ -34,10 +41,9 @@ export default class RepLogCreator extends Component {
 					<label className="sr-only required" htmlFor="item">What did you lift?</label>
 					<select id="rep_log_item" /* defaultValue="cat"*/ ref={this.itemSelect} required="required">
 						<option value="">What did you lift?</option>
-						<option value="cat">Cat</option>
-						<option value="fat_cat">Big Fat Cat</option>
-						<option value="laptop">My Laptop</option>
-						<option value="coffee_cup">Coffee Cup</option>
+						{ this.itemOptions.map(option => {
+							return <option value={option.id} key={option.id}>{option.text}</option>
+						})}
 					</select>
 				</div>
 				{' '}
