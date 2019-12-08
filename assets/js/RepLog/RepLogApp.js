@@ -33,8 +33,11 @@ export default class RepLogApp extends Component {
 			totalWeightLifted: Math.floor(Math.random()*5)
 		}
 
-		const newRepLogs = [...this.state.repLogs, newRep];
-		this.setState({repLogs: newRepLogs});
+		this.setState((prevState) => {
+			const newRepLogs = [...prevState.repLogs, newRep];
+
+			return { repLogs: newRepLogs }
+		});
 	}
 
 	render() {
