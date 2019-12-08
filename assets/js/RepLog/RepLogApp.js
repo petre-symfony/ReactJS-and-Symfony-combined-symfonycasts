@@ -22,6 +22,12 @@ export default class RepLogApp extends Component {
 		this.setState({highlightedRowId: repLogId});
 	}
 
+	handleNewItemSubmit(event){
+		event.preventDefault();
+
+		console.log('Submit');
+		console.log(event.target);
+	}
 
 	render() {
 		return (
@@ -29,6 +35,7 @@ export default class RepLogApp extends Component {
 				{ ...this.state }
 				{ ...this.props }
 				onRowClick={this.handleRowClick}
+				onNewItemSubmit = { this.handleNewItemSubmit }
 			/>
 		);
 	}

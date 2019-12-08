@@ -15,7 +15,7 @@ function calculateTotalWeightLifted(repLogs){
 const calculateTotalWeightFancier = repLogs => repLogs.reduce((total, log) => total + log.totalWeightLifted, 0);
 
 export default function RepLogs(props) {
-	const { withHeart, highlightedRowId, onRowClick, repLogs } = props;
+	const { withHeart, highlightedRowId, onRowClick, onNewItemSubmit, repLogs } = props;
 
 	let heart = '';
 	if (withHeart){
@@ -51,7 +51,7 @@ export default function RepLogs(props) {
 				</tfoot>
 			</table>
 
-			<form className="form-inline">
+			<form className="form-inline" onSubmit={ onNewItemSubmit }>
 				<div className="form-group">
 					<label className="sr-only required" htmlFor="item">What did you lift?</label>
 					<select id="rep_log_item" /* defaultValue="cat"*/ name="item" required="required">
@@ -77,6 +77,7 @@ export default function RepLogs(props) {
 RepLogs.propTypes = {
 	highlightedRowId: PropTypes.any,
 	onRowClick: PropTypes.func.isRequired,
+	onNewItemSubmit: PropTypes.func.isRequired,
 	withHeart: PropTypes.bool,
 	repLogs: PropTypes.array.isRequired
 }
