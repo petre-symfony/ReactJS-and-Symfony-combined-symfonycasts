@@ -14,11 +14,11 @@ export default class RepLogCreator extends Component {
 	handleFormSubmit(event){
 		event.preventDefault();
 
-		const { onNewItemSubmit } = this.props;
+		const { onAddRepLog } = this.props;
 		const quantityInput = this.quantityInput.current;
 		const itemSelect = this.itemSelect.current;
 
-		onNewItemSubmit(
+		onAddRepLog(
 			itemSelect.options[itemSelect.selectedIndex].text,
 			quantityInput.value
 		);
@@ -53,5 +53,5 @@ export default class RepLogCreator extends Component {
 }
 
 RepLogCreator.propTypes = {
-	onNewItemSubmit: PropTypes.func.isRequired
+	onAddRepLog: PropTypes.func.isRequired
 }
