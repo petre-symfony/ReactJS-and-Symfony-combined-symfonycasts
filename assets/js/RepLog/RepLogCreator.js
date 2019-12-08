@@ -30,7 +30,7 @@ export default class RepLogCreator extends Component {
 			// don't submit, or clear the form
 			return;
 		}
-		
+
 		onAddRepLog(
 			itemSelect.options[itemSelect.selectedIndex].text,
 			quantityInput.value
