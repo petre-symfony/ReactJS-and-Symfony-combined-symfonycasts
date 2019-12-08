@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import RepLogList from "./RepLogList";
 
 export default function RepLogs(props) {
+	const { withHeart, highlightedRowId, onRowClick } = props;
+
 	let heart = '';
 	if (withHeart){
 		heart = <span>❤️</span>;
@@ -21,7 +23,7 @@ export default function RepLogs(props) {
 				</thead>
 				<RepLogList
 					highlightedRowId={ highlightedRowId }
-					onRowClick={ this.handleRowClick }
+					onRowClick={ onRowClick }
 				/>
 				<tfoot>
 				<tr>
