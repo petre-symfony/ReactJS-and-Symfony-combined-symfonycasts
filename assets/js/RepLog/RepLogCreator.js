@@ -67,6 +67,7 @@ export default class RepLogCreator extends Component {
 				<div className={`form-group ${quantityInputError ? 'has-error' : ''}`}>
 					<label className="sr-only required" htmlFor="reps">How many times?</label>
 					<input type="number" id="rep_log_reps" ref={this.quantityInput} required="required" placeholder="How many times?"/>
+					{quantityInputError && <span className="help-block">{quantityInputError}</span>}
 				</div>
 				{' '}
 				<button type="submit" className="btn btn-primary">I Lifted it!</button>
