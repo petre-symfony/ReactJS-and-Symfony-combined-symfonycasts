@@ -22,9 +22,17 @@ export default class RepLogApp extends Component {
 		this.setState({highlightedRowId: repLogId});
 	}
 
-	handleNewItemSubmit(itemName, reps){
-		console.log('TODO - handle this new data');
-		console.log(itemName, reps);
+	handleNewItemSubmit(itemLabel, reps){
+		const repLogs = this.state.repLogs;
+		const newRep = {
+			id: 'TODO - id',
+			reps: reps,
+			itemLabel: itemLabel,
+			totalWeightLifted: Math.floor(Math.random()*5)
+		}
+
+		repLogs.push(newRep);
+		this.setState({repLogs: repLogs});
 	}
 
 	render() {
