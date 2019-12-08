@@ -15,6 +15,10 @@ export default class RepLogCreator extends Component {
 			{ id: 'coffee_cup', text: 'Coffee Cup' },
 		];
 
+		this.state = {
+			quantityInputError: ''
+		};
+
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}
 
@@ -26,7 +30,10 @@ export default class RepLogCreator extends Component {
 		const itemSelect = this.itemSelect.current;
 
 		if(quantityInput.value <= 0){
-			// TODO - print some validation error!
+			this.setState({
+				quantityInputError: 'Please enter a value greater than 0'
+			});
+
 			// don't submit, or clear the form
 			return;
 		}
@@ -38,9 +45,13 @@ export default class RepLogCreator extends Component {
 
 		quantityInput.value = '';
 		itemSelect.selectedIndex = 0;
+		this.setState({
+			quantityInputError: ''
+		});
 	}
 
 	render() {
+		const { quantityInputError } = this.state;
 		return (
 			<form className="form-inline" onSubmit={this.handleFormSubmit}>
 				<div className="form-group">
@@ -53,7 +64,7 @@ export default class RepLogCreator extends Component {
 					</select>
 				</div>
 				{' '}
-				<div className="form-group">
+				<div className={`form-group ${quantityInputError ? 'has-error' : ''}`}>
 					<label className="sr-only required" htmlFor="reps">How many times?</label>
 					<input type="number" id="rep_log_reps" ref={this.quantityInput} required="required" placeholder="How many times?"/>
 				</div>
