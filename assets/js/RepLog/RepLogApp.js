@@ -26,7 +26,7 @@ export default class RepLogApp extends Component {
 		event.preventDefault();
 
 		console.log('Submit');
-		console.log(event.target);
+		console.log(event.target.elements.namedItem('reps').value);
 	}
 
 	render() {
