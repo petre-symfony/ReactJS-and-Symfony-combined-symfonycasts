@@ -26,7 +26,6 @@ export default class RepLogApp extends Component {
 	}
 
 	handleNewItemSubmit(itemLabel, reps){
-		const repLogs = this.state.repLogs;
 		const newRep = {
 			id: uuid(),
 			reps: reps,
@@ -34,8 +33,8 @@ export default class RepLogApp extends Component {
 			totalWeightLifted: Math.floor(Math.random()*5)
 		}
 
-		repLogs.push(newRep);
-		this.setState({repLogs: repLogs});
+		const newRepLogs = [...this.state.repLogs, newRep];
+		this.setState({repLogs: newRepLogs});
 	}
 
 	render() {
