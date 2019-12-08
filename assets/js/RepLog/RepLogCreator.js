@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 export default class RepLogCreator extends Component {
+	constructor(props) {
+		super(props);
+		this.handleFormSubmit = this.handleFormSubmit.bind(this);
+	}
 
 	handleFormSubmit(event){
 		event.preventDefault();
