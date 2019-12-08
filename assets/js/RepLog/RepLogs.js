@@ -23,15 +23,6 @@ export default function RepLogs(props) {
 		heart = <span>❤️</span>;
 	}
 
-	function handleFormSubmit(event) {
-		event.preventDefault();
-
-		console.log('Submit');
-		console.log(event.target.elements.namedItem('reps').value);
-
-		onNewItemSubmit('Big Fat Cat', event.target.elements.namedItem('reps').value);
-	}
-
 	return (
 		<div className="col-md-7">
 			<h2>Lift History! {heart}</h2>
@@ -61,7 +52,9 @@ export default function RepLogs(props) {
 				</tfoot>
 			</table>
 
-			<RepLogCreator />
+			<RepLogCreator
+				onNewItemSubmit={onNewItemSubmit}
+			/>
 		</div>
 	);
 }

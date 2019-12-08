@@ -2,6 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function RepLogCreator(props) {
+	const { onNewItemSubmit } = props;
+
+	function handleFormSubmit(event) {
+		event.preventDefault();
+
+		console.log('Submit');
+		console.log(event.target.elements.namedItem('reps').value);
+
+		onNewItemSubmit('Big Fat Cat', event.target.elements.namedItem('reps').value);
+	}
+
 	return (
 		<form className="form-inline" onSubmit={ handleFormSubmit }>
 			<div className="form-group">
@@ -23,4 +34,8 @@ export default function RepLogCreator(props) {
 			<button type="submit" className="btn btn-primary">I Lifted it!</button>
 		</form>
 	);
+}
+
+RepLogCreator.propTypes = {
+	onNewItemSubmit: PropTypes.func.isRequired
 }
