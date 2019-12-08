@@ -27,6 +27,13 @@ Encore
     .cleanupOutputBeforeBuild()
     .enableVersioning(Encore.isProduction())
     .enableReactPreset()
+    .configureBabel((babelConfig) => {
+      babelConfig.env = {
+        "production": {
+          "plugins": ["transform-react-remove-prop-types"]
+        }
+      }
+    })
 ;
 
 // export the final configuration
