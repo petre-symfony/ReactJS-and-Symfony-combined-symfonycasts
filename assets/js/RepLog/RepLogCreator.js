@@ -18,8 +18,8 @@ export default class RepLogCreator extends Component {
 		const quantityInput = this.quantityInput.current;
 		const itemSelect = this.itemSelect.current;
 
-		console.log(this.quantityInput);
-		console.log(this.itemSelect);
+		console.log(quantityInput.value);
+		console.log(itemSelect.options[itemSelect.selectedIndex].text);
 
 		// onNewItemSubmit('Big Fat Cat', event.target.elements.namedItem('reps').value);
 	}
