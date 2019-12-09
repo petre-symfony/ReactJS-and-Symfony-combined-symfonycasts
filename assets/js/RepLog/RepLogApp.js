@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import RepLogs from './RepLogs';
+import { getRepLogs } from '../api/rep_log_api';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 
@@ -7,6 +8,10 @@ import uuid from 'uuid/v4';
 export default class RepLogApp extends Component {
 	constructor(props) {
 		super(props);
+
+		getRepLogs().then((data) => {
+			console.log(data);
+		})
 
 		this.state = {
 			highlightedRowId: null,
