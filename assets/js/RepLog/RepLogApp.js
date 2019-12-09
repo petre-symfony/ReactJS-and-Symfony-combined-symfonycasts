@@ -64,10 +64,11 @@ export default class RepLogApp extends Component {
 			.then(repLog => {
 				this.setState(prevState => {
 					const newRepLogs = [...prevState.repLogs, repLog];
-					return Object.assign({
+					return {
+						...newState,
 						repLogs: newRepLogs,
 						newRepLogValidationErrorMessage: ''
-					}, newState);
+					}
 				});
 				this.setSuccessMessage('Rep Log Saved!');
 			})
