@@ -6,7 +6,8 @@ export default function RepLogList(props) {
 		highlightedRowId,
 		onRowClick,
 		onDeleteRepLog,
-		repLogs
+		repLogs,
+		isLoaded
 	} = props;
 
 	const handleDeleteClick = function(event, repLogId) {
@@ -43,5 +44,6 @@ RepLogList.propTypes = {
 	highlightedRowId: PropTypes.any,
 	onRowClick: PropTypes.func.isRequired,
 	repLogs: PropTypes.array.isRequired,
-	onDeleteRepLog: PropTypes.func.isRequired
+	onDeleteRepLog: PropTypes.func.isRequired,
+	isLoaded: PropTypes.bool.isRequired
 }
