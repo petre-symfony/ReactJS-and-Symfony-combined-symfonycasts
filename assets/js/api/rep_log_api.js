@@ -2,7 +2,11 @@ function fetchJson(url, options) {
 	return fetch(url, Object.assign({
 		credentials: 'same-origin'
 	}, options))
-		.then(response => response.json());
+		.then(response => {
+			// decode JSON, but avoid problems with empty responses
+			return response.text()
+				.then(text => text ? JSON.parse(text) : '')
+		});
 }
 
 export function getRepLogs() {
