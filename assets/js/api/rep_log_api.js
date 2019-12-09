@@ -3,6 +3,6 @@ export function getRepLogs() {
 		credentials: 'same-origin'
 	})
 		.then(response => {
-			return response.json();
+			return response.json().then((data) => data.items);
 		});
 }
