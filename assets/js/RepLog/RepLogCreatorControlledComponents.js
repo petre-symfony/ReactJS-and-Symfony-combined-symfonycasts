@@ -28,8 +28,9 @@ export default class RepLogCreator extends Component {
 
 		const { onAddRepLog } = this.props;
 		const { selectedItemId, quantityValue } = this.state;
+
 		const itemLabel = this.itemOptions.find((option) => {
-			return option.id === this.state.selectedItemId
+			return option.id === selectedItemId
 		}).text;
 
 		if(quantityValue <= 0){
