@@ -67,6 +67,12 @@ export default class RepLogApp extends Component {
 		this.setState({
 			successMessage: message
 		});
+
+		setTimeout(() => {
+			this.setState({
+				successMessage: ''
+			});
+		}, 3000)
 	}
 
 	handleHeartChange(heartCount) {
