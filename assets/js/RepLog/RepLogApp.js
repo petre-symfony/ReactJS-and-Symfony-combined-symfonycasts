@@ -18,6 +18,8 @@ export default class RepLogApp extends Component {
 			successMessage: ''
 		}
 
+		this.successMessageTimeoutHandle = 0;
+
 		this.handleRowClick = this.handleRowClick.bind(this);
 		this.handleAddRepLog = this.handleAddRepLog.bind(this);
 		this.handleHeartChange = this.handleHeartChange.bind(this);
@@ -68,10 +70,13 @@ export default class RepLogApp extends Component {
 			successMessage: message
 		});
 
-		setTimeout(() => {
+		clearTimeout(this.successMessageTimeoutHandle);
+		this.successMessageTimeoutHandle = setTimeout(() => {
 			this.setState({
 				successMessage: ''
 			});
+
+			this.successMessageTimeoutHandle = 0;
 		}, 3000)
 	}
 
