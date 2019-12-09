@@ -34,7 +34,10 @@ export default function RepLogs(props) {
 		<div className="col-md-7">
 			<h2>Lift History! {heart}</h2>
 
-			<input type="number" />
+			<input
+				type="number"
+				value={numberOfHearts}
+			/>
 
 			<table className="table table-striped">
 				<thead>
