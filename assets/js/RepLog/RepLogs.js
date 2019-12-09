@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import RepLogList from "./RepLogList";
-import RepLogCreator from "./RepLogCreator";
+//import RepLogCreator from "./RepLogCreator";
+import RepLogCreator from "./RepLogCreatorControlledComponents";
 import PropTypes from 'prop-types';
 
 function calculateTotalWeightLifted(repLogs){
