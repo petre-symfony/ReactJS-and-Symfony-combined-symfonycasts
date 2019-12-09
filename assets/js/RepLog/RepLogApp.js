@@ -91,6 +91,18 @@ export default class RepLogApp extends Component {
 	}
 
 	handleDeleteRepLog(id) {
+		this.setState((prevState) => {
+			return {
+				repLogs: prevState.repLogs.map(repLog => {
+					if (repLog.id !== id) {
+						return repLog;
+					}
+
+					return Object.assign({}, repLog, {isDeleting: true});
+				})
+			};
+		});
+
 		deleteRepLog(id)
 			.then(() => {
 				// remove the rep log without mutating state
