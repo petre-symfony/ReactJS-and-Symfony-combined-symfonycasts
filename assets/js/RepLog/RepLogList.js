@@ -15,6 +15,16 @@ export default function RepLogList(props) {
 		onDeleteRepLog(repLogId);
 	};
 
+	if (!isLoaded) {
+		return (
+			<tbody>
+			  <tr>
+				  <td colSpan="4" className="text-center">Loading...</td>
+			  </tr>
+			</tbody>
+		);
+	}
+
 	return (
 		<tbody>
 		{repLogs.map((repLog) => (
