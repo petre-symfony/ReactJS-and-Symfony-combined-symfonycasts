@@ -16,6 +16,8 @@ export default class RepLogCreator extends Component {
 		];
 
 		this.state = {
+			selectedItemId: '',
+			quantityValue: 0,
 			quantityInputError: ''
 		};
 
@@ -51,12 +53,17 @@ export default class RepLogCreator extends Component {
 	}
 
 	render() {
-		const { quantityInputError } = this.state;
+		const {
+			quantityInputError,
+			selectedItemId,
+			quantityValue
+		} = this.state;
+
 		return (
 			<form onSubmit={this.handleFormSubmit}>
 				<div className="form-group">
 					<label className="sr-only required" htmlFor="item">What did you lift?</label>
-					<select id="rep_log_item" /* defaultValue="cat"*/ ref={this.itemSelect} required="required">
+					<select id="rep_log_item" /* defaultValue="cat"*/ value={selectedItemId} required="required">
 						<option value="">What did you lift?</option>
 						{ this.itemOptions.map(option => {
 							return <option value={option.id} key={option.id}>{option.text}</option>
@@ -66,7 +73,7 @@ export default class RepLogCreator extends Component {
 				{' '}
 				<div className={`form-group ${quantityInputError ? 'has-error' : ''}`}>
 					<label className="sr-only required" htmlFor="reps">How many times?</label>
-					<input type="number" id="rep_log_reps" ref={this.quantityInput} required="required" placeholder="How many times?"/>
+					<input type="number" id="rep_log_reps" value={quantityValue} required="required" placeholder="How many times?"/>
 					{quantityInputError && <span className="help-block">{quantityInputError}</span>}
 				</div>
 				{' '}
