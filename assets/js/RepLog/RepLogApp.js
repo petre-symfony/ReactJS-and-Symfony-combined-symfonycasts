@@ -29,7 +29,7 @@ export default class RepLogApp extends Component {
 				})
 			});
 	}
-	
+
 	handleRowClick(repLogId) {
 		this.setState({highlightedRowId: repLogId});
 	}
