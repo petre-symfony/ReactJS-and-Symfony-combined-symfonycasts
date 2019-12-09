@@ -47,7 +47,7 @@ export default class RepLogApp extends Component {
 		this.setState({
 			isSavingNewRepLog: true
 		});
-		
+
 		createRepLog(newRep)
 			.then(repLog => {
 				this.setState(prevState => {

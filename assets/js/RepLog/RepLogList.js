@@ -7,7 +7,8 @@ export default function RepLogList(props) {
 		onRowClick,
 		onDeleteRepLog,
 		repLogs,
-		isLoaded
+		isLoaded,
+		isSavingNewRepLog
 	} = props;
 
 	const handleDeleteClick = function(event, repLogId) {
@@ -45,6 +46,16 @@ export default function RepLogList(props) {
 				</td>
 			</tr>
 		))}
+
+		{isSavingNewRepLog && (
+			<tr>
+				<td
+					colSpan="4"
+					className="text-center"
+				>Lifting to the database ...</td>
+			</tr>
+		)}
+
 		</tbody>
 	)
 
@@ -55,5 +66,6 @@ RepLogList.propTypes = {
 	onRowClick: PropTypes.func.isRequired,
 	repLogs: PropTypes.array.isRequired,
 	onDeleteRepLog: PropTypes.func.isRequired,
-	isLoaded: PropTypes.bool.isRequired
+	isLoaded: PropTypes.bool.isRequired,
+	isSavingNewRepLog: PropTypes.bool.isRequired
 }
