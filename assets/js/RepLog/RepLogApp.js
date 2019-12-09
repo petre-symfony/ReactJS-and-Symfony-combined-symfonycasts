@@ -15,7 +15,7 @@ export default class RepLogApp extends Component {
 				{ id: uuid(), reps: 10, itemLabel: 'Big Fat Cat', totalWeightLifted: 180 },
 				{ id: uuid(), reps: 4, itemLabel: 'Big Fat Cat', totalWeightLifted: 72 }
 			],
-			numberOfHearts: 10
+			numberOfHearts: 1
 		}
 
 		this.handleRowClick = this.handleRowClick.bind(this);
