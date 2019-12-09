@@ -22,6 +22,8 @@ export default class RepLogCreator extends Component {
 		};
 
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
+		this.handleSelectedItemChange = this.handleSelectedItemChange.bind(this);
+		this.handleQuantityInputChange = this.handleQuantityInputChange.bind(this);
 	}
 
 	handleFormSubmit(event){
@@ -52,6 +54,18 @@ export default class RepLogCreator extends Component {
 		});
 	}
 
+	handleSelectedItemChange(event) {
+		this.setState({
+			selectedItemId: event.target.value
+		});
+	}
+
+	handleQuantityInputChange(event) {
+		this.setState({
+			quantityValue: event.target.value
+		});
+	}
+
 	render() {
 		const {
 			quantityInputError,
@@ -63,7 +77,10 @@ export default class RepLogCreator extends Component {
 			<form onSubmit={this.handleFormSubmit}>
 				<div className="form-group">
 					<label className="sr-only required" htmlFor="item">What did you lift?</label>
-					<select id="rep_log_item" /* defaultValue="cat"*/ value={selectedItemId} required="required">
+					<select id="rep_log_item" /* defaultValue="cat"*/
+							value={selectedItemId} onChange={this.handleSelectedItemChange}
+							required="required"
+					>
 						<option value="">What did you lift?</option>
 						{ this.itemOptions.map(option => {
 							return <option value={option.id} key={option.id}>{option.text}</option>
@@ -73,7 +90,10 @@ export default class RepLogCreator extends Component {
 				{' '}
 				<div className={`form-group ${quantityInputError ? 'has-error' : ''}`}>
 					<label className="sr-only required" htmlFor="reps">How many times?</label>
-					<input type="number" id="rep_log_reps" value={quantityValue} required="required" placeholder="How many times?"/>
+					<input type="number" id="rep_log_reps"
+						 value={quantityValue} onChange={this.handleQuantityInputChange}
+						 required="required" placeholder="How many times?"
+					/>
 					{quantityInputError && <span className="help-block">{quantityInputError}</span>}
 				</div>
 				{' '}
