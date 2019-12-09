@@ -21,17 +21,21 @@ export default function RepLogs(props) {
 		highlightedRowId,
 		onRowClick,
 		onAddRepLog,
-		repLogs
+		repLogs,
+		numberOfHearts
 	} = props;
 
 	let heart = '';
 	if (withHeart){
-		heart = <span>❤️</span>;
+		heart = <span>{'❤️'.repeat(numberOfHearts)}</span>;
 	}
 
 	return (
 		<div className="col-md-7">
 			<h2>Lift History! {heart}</h2>
+
+			<input type="number" />
+
 			<table className="table table-striped">
 				<thead>
 				<tr>
@@ -75,5 +79,6 @@ RepLogs.propTypes = {
 	onRowClick: PropTypes.func.isRequired,
 	onAddRepLog: PropTypes.func.isRequired,
 	withHeart: PropTypes.bool,
-	repLogs: PropTypes.array.isRequired
+	repLogs: PropTypes.array.isRequired,
+	numberOfHearts: PropTypes.number.isRequired
 }
