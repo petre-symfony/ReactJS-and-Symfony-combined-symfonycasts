@@ -10,5 +10,6 @@ export function getRepLogs() {
 export function deleteRepLog(id) {
 	return fetch(`/reps/${id}`, {
 		credentials: 'same-origin',
+		method: 'DELETE'
 	});
 }
