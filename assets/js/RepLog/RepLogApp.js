@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import RepLogs from './RepLogs';
-import { getRepLogs, deleteRepLog } from '../api/rep_log_api';
+import { getRepLogs, deleteRepLog, createRepLog } from '../api/rep_log_api';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 
@@ -44,6 +44,12 @@ export default class RepLogApp extends Component {
 			totalWeightLifted: Math.floor(Math.random()*5)
 		}
 
+		createRepLog(newRep)
+			.then(data => {
+				console.log(data);
+			})
+		;
+		
 		this.setState((prevState) => {
 			const newRepLogs = [...prevState.repLogs, newRep];
 
