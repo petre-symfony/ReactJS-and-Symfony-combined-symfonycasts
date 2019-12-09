@@ -14,7 +14,8 @@ export default class RepLogApp extends Component {
 			repLogs: [],
 			numberOfHearts: 1,
 			isLoaded: false,
-			isSavingNewRepLog: false
+			isSavingNewRepLog: false,
+			successMessage: ''
 		}
 
 		this.handleRowClick = this.handleRowClick.bind(this);
@@ -54,7 +55,8 @@ export default class RepLogApp extends Component {
 					const newRepLogs = [...prevState.repLogs, repLog];
 					return {
 						repLogs: newRepLogs,
-						isSavingNewRepLog: false
+						isSavingNewRepLog: false,
+						successMessage: 'Rep Log Saved!'
 					};
 				})
 			})

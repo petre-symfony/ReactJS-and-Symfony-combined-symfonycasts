@@ -27,7 +27,8 @@ export default function RepLogs(props) {
 		onHeartChange,
 		onDeleteRepLog,
 		isLoaded,
-		isSavingNewRepLog
+		isSavingNewRepLog,
+		successMessage
 	} = props;
 
 	let heart = '';
@@ -47,6 +48,12 @@ export default function RepLogs(props) {
 				}}
 			/>
 
+			{successMessage && (
+				<div className="alert alert-success text-center">
+					{successMessage}
+				</div>
+			)}
+			
 			<table className="table table-striped">
 				<thead>
 				<tr>
@@ -98,5 +105,6 @@ RepLogs.propTypes = {
 	onHeartChange: PropTypes.func.isRequired,
 	onDeleteRepLog: PropTypes.func.isRequired,
 	isLoaded: PropTypes.bool.isRequired,
-	isSavingNewRepLog: PropTypes.bool.isRequired
+	isSavingNewRepLog: PropTypes.bool.isRequired,
+	successMessage: PropTypes.string.isRequired
 }
