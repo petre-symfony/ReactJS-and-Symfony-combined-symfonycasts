@@ -22,7 +22,8 @@ export default function RepLogs(props) {
 		onRowClick,
 		onAddRepLog,
 		repLogs,
-		numberOfHearts
+		numberOfHearts,
+		onHeartChange
 	} = props;
 
 	let heart = '';
@@ -37,6 +38,9 @@ export default function RepLogs(props) {
 			<input
 				type="number"
 				value={numberOfHearts}
+				onChange={(e) => {
+					onHeartChange(e.target.value);
+				}}
 			/>
 
 			<table className="table table-striped">
@@ -83,5 +87,6 @@ RepLogs.propTypes = {
 	onAddRepLog: PropTypes.func.isRequired,
 	withHeart: PropTypes.bool,
 	repLogs: PropTypes.array.isRequired,
-	numberOfHearts: PropTypes.number.isRequired
+	numberOfHearts: PropTypes.number.isRequired,
+	onHeartChange: PropTypes.func.isRequired
 }
