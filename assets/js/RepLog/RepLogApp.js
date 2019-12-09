@@ -36,6 +36,10 @@ export default class RepLogApp extends Component {
 			});
 	}
 
+	componentWillUnmount() {
+		clearTimeout(this.successMessageTimeoutHandle);
+	}
+
 	handleRowClick(repLogId) {
 		this.setState({highlightedRowId: repLogId});
 	}
