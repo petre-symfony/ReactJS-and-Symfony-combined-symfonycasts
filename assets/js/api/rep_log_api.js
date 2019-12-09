@@ -6,3 +6,9 @@ export function getRepLogs() {
 			return response.json().then((data) => data.items);
 		});
 }
+
+export function deleteRepLog(id) {
+	return fetch(`/reps/${id}`, {
+		credentials: 'same-origin',
+	});
+}
