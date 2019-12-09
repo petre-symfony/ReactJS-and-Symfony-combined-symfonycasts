@@ -77,9 +77,10 @@ export default class RepLogApp extends Component {
 					const errors = errorsData.errors;
 					const firstError = errors[Object.keys(errors)[0]];
 
-					this.setState(Object.assign({
+					this.setState({
+						...newState,
 						newRepLogValidationErrorMessage: firstError
-					}, newState));
+					});
 				})
 			})
 		;
@@ -114,7 +115,7 @@ export default class RepLogApp extends Component {
 						return repLog;
 					}
 
-					return Object.assign({}, repLog, {isDeleting: true});
+					return {...repLog, isDeleting: true};
 				})
 			};
 		});
