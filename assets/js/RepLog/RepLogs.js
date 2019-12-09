@@ -53,7 +53,7 @@ export default function RepLogs(props) {
 					{successMessage}
 				</div>
 			)}
-			
+
 			<table className="table table-striped">
 				<thead>
 				<tr>

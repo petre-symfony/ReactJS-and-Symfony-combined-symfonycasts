@@ -55,12 +55,18 @@ export default class RepLogApp extends Component {
 					const newRepLogs = [...prevState.repLogs, repLog];
 					return {
 						repLogs: newRepLogs,
-						isSavingNewRepLog: false,
-						successMessage: 'Rep Log Saved!'
+						isSavingNewRepLog: false
 					};
-				})
+				});
+				this.setSuccessMessage('Rep Log Saved!');
 			})
 		;
+	}
+
+	setSuccessMessage(message) {
+		this.setState({
+			successMessage: message
+		});
 	}
 
 	handleHeartChange(heartCount) {
