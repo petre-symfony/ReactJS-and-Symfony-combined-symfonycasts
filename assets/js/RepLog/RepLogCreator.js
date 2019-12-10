@@ -73,7 +73,7 @@ export default class RepLogCreator extends Component {
 				</div>
 				{' '}
 
-				<Button type="submit">
+				<Button type="submit" className="btn-primary">
 					I Lifted it! <span className="fa fa-plus-circle"></span>
 				</Button>
 			</form>
