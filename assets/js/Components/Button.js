@@ -11,3 +11,11 @@ export default function Button(props){
 		</button>
 	)
 }
+
+Button.propTypes = {
+	className: PropTypes.string
+}
+
+Button.defaultProps = {
+	className: ''
+}
