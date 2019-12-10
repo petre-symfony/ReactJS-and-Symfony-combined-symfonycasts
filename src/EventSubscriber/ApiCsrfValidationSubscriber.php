@@ -12,7 +12,8 @@ class ApiCsrfValidationSubscriber implements EventSubscriberInterface{
 	  }
 
 	  $request = $event->getRequest();
-	  
+	  dump($request->attributes->all());die;
+
 	  // no validation needed on safe methods
 	  if ($request->isMethodSafe(false)) {
 		  return;
