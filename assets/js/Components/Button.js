@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Button(props){
 	return (
 		<button
-			className="btn"
+			className={`btn ${props.className}`}
 			{...props}
 		>
 			{props.children}
