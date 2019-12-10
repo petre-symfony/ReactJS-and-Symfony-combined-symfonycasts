@@ -14,7 +14,7 @@ use App\Api\ApiRoute;
 
 /**
  * @IsGranted("ROLE_USER")
- * @ApiRoute(defaults={"_is_api": true})
+ * @ApiRoute()
  */
 class RepLogController extends BaseController {
   /**
