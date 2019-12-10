@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from '../Components/Button';
 import PropTypes from 'prop-types';
 
 export default class RepLogCreator extends Component {
@@ -71,7 +72,8 @@ export default class RepLogCreator extends Component {
 					{quantityInputError && <span className="help-block">{quantityInputError}</span>}
 				</div>
 				{' '}
-				<button type="submit" className="btn btn-primary">I Lifted it!</button>
+
+				<Button type="submit" text="I Lifted it!"/>
 			</form>
 		);
 	}
