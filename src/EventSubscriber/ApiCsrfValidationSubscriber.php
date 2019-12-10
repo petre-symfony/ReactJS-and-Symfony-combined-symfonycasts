@@ -7,7 +7,16 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 class ApiCsrfValidationSubscriber implements EventSubscriberInterface{
   public function onKernelRequest(GetResponseEvent $event){
-    // ...
+	  if (!$event->isMasterRequest()) {
+		  return;
+	  }
+
+	  $request = $event->getRequest();
+	  
+	  // no validation needed on safe methods
+	  if ($request->isMethodSafe(false)) {
+		  return;
+	  }
   }
 
   public static function getSubscribedEvents(){
