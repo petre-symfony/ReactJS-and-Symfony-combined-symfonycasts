@@ -152,3 +152,7 @@ RepLogApp.propTypes = {
 	withHeart: PropTypes.bool,
 	itemOptions: PropTypes.array
 }
+
+RepLogApp.defaultProps = {
+	itemOptions: []
+};
