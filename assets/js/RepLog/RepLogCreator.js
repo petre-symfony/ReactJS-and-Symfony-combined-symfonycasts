@@ -73,7 +73,9 @@ export default class RepLogCreator extends Component {
 				</div>
 				{' '}
 
-				<Button type="submit" text="I Lifted it!"/>
+				<Button type="submit">
+					I Lifted it! <span className="fa fa-plus-circle"></span>
+				</Button>
 			</form>
 		);
 	}
